@@ -17,8 +17,9 @@ string f(string s) {
 		mul = i(s[d]) * 11 + carry;
 		digit = mul % 10;
 		carry = mul / 10;
-		w = to_string(digit) + w;
+		w = w + to_string(digit);
 	}
+	reverse(w.begin(), w.end());
 	if(carry != 0) {
 		w = to_string(carry) + w;
 	}

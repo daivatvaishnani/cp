@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define REP(i, a, b) for(int i=a; i<=b; ++i
+#define REP(i, a, b) for(int i=a; i<=b; ++i)
 #define RREP(i, a, b) for(int i=b; i<=a; --i)
 #define REPC(i, C) for(auto i:C)
 #define PI acos(-1)
@@ -10,7 +10,6 @@ using namespace std;
 #define S second
 #define PB push_back
 #define MP make_pair
-#define SZ(x) ((int)x.size())
 #define ALL(C) C.begin(), C.end()
 #define RALL(C) C.rbegin(), C.rend()
 #define EPS 1e-9
@@ -28,11 +27,19 @@ const int mod = 1e9 + 7;
 
 template<typename T, typename U> inline bool EQ(const T &a, const U &b) {return (abs(a-b) <= EPS);}
 
-ll POW(ll a, ll b) {ll ans=1;a = a%mod;while(b>0){if(b&1) ans=(a*ans)%mod;b>>=1;a=(a*a)%mod;}return ans;}
+long long fib[maxn];
 
 int main() {
 	freopen("in", "r", stdin); freopen("out", "w", stdout);
 	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-
+	int n;
+	cin >> n;
+	fib[1] = 0;
+	fib[2] = 1;
+	REP(i,3,maxn-1) fib[i] = fib[i-1] + fib[i-2];
+	ld a = (1+sqrt(5))/2;
+	ld b = (1-sqrt(5))/2;
+	cout << (pow((1+sqrt(5))/2,n-1) - pow((1-sqrt(5))/2,n-1))/sqrt(5) << "\n"; // Formula
+	cout << fib[n] << "\n";														// Loop
   	return 0;
 }

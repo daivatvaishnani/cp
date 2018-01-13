@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define REP(i, a, b) for(int i=a; i<=b; ++i
+#define REP(i, a, b) for(int i=a; i<=b; ++i)
 #define RREP(i, a, b) for(int i=b; i<=a; --i)
 #define REPC(i, C) for(auto i:C)
 #define PI acos(-1)
@@ -10,7 +10,6 @@ using namespace std;
 #define S second
 #define PB push_back
 #define MP make_pair
-#define SZ(x) ((int)x.size())
 #define ALL(C) C.begin(), C.end()
 #define RALL(C) C.rbegin(), C.rend()
 #define EPS 1e-9
@@ -28,11 +27,17 @@ const int mod = 1e9 + 7;
 
 template<typename T, typename U> inline bool EQ(const T &a, const U &b) {return (abs(a-b) <= EPS);}
 
-ll POW(ll a, ll b) {ll ans=1;a = a%mod;while(b>0){if(b&1) ans=(a*ans)%mod;b>>=1;a=(a*a)%mod;}return ans;}
-
 int main() {
-	freopen("in", "r", stdin); freopen("out", "w", stdout);
+	// freopen("in", "r", stdin); freopen("out", "w", stdout);
 	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-
+	string s;
+	cin >> s;
+	int cnt = 0;
+	REP(i,0,s.size()) {
+		if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u') ++cnt;
+		int d = s[i]-'0';
+		if(d>=0 && d<=9 && d%2!=0) ++cnt;
+	}
+	cout << cnt << "\n";
   	return 0;
 }
