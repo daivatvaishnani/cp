@@ -1,0 +1,7 @@
+Reasons why I find Pseudocode 1 better:
+1.	It has more flexibility
+	For e.g. I have two methods 'getCurrentShows' and 'findSlots' which any team member can use to implement many other functionalities. It might not be the case with second version.
+
+
+2.	The methods are more Generalized/Atomic 
+	The case for 'createShowSchedule' methods, the method in the first pseudocode is more generalized it works for a slot and we can easily play around with any slot. Whereas the second versions requires a array of slots for each day and it will do the work.
