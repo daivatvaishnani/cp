@@ -6,7 +6,7 @@
 using namespace std;
 
 bool organizeContainers(vector<vector<int>> &containers) {
-    
+        
 }
 
 string organizingContainers(vector<vector<int>> &containers) {
